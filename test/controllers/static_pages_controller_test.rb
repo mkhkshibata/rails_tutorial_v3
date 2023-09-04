@@ -3,19 +3,19 @@ require "test_helper"
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = 'Ruby on Rails Tutorial Sample App'
+    @base_title = 'Ruby on Rails Tutorial Sample App V3'
   end
 
   test "rootページのGETリクエストとタイトル表示のテスト" do
     get root_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "homeページのGETリクエストとタイトル表示のテスト" do
     get static_pages_home_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "helpページのGETリクエストとタイトル表示のテスト" do
